@@ -1,0 +1,11 @@
+.Home__page{
+    width: 100%;
+    min-height: 92vh;
+    max-height: auto;
+}
+
+.home__Img{
+    height: 600px;
+    width: 400px;
+    border-radius:30px;
+}   
