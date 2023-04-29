@@ -1,1 +1,1 @@
-export const BASE_URL = 'https://dashboard.render.com/'
+export const BASE_URL = 'https://bookstore-api-server.onrender.com/'
