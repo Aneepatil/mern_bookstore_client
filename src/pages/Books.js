@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Book from "./Book";
+import {BASE_URL} from '../HelperUrl'
 
 const Books = () => {
   const [books, setBooks] = useState("");
@@ -8,7 +9,7 @@ const Books = () => {
   useEffect(() => {
     const fetch = async () => {
       await axios
-        .get("http://localhost:8000/api/getbook")
+        .get(`${BASE_URL}/api/getbook`)
         .then((res) => setBooks(res.data.books));
     };
     fetch();

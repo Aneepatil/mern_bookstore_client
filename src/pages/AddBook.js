@@ -1,6 +1,8 @@
 import axios from "axios";
 import React, { useState } from "react";
 // import { useNavigate } from "react-router";
+import {BASE_URL} from '../HelperUrl'
+
 
 const AddBook = () => {
   // const navigate = useNavigate();
@@ -19,8 +21,8 @@ const AddBook = () => {
   const handleBook = async (e) => {
     e.preventDefault();
 
-    await axios.post("http://localhost:8000/api/add",newBook)
-    .then((res)=>res.data).catch(err=>console.log(err.response.data))
+    await axios.post(`${BASE_URL}/api/add`,newBook)
+    .then((res)=>console.log(res.data)).catch(err=>console.log(err.response.data))
 
     setNewBook({
       bookName: "",

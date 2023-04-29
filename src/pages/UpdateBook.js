@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router";
+import {BASE_URL} from '../HelperUrl'
 
 const UpdateBook = () => {
   const { id } = useParams();
@@ -17,7 +18,7 @@ const UpdateBook = () => {
   useEffect(() => {
     const handelupdateBook = async () => {
       await axios
-        .get(`http://localhost:8000/api/getbook/${id}`)
+        .get(`${BASE_URL}/api/getbook/${id}`)
         .then((res) => setUpdateBook(res.data.books))
         .catch((err) => console.log(err));
     };
@@ -26,7 +27,7 @@ const UpdateBook = () => {
 
   const submitUpdatedBook = () => {
     const sendUpdatedBook = async () => {
-      await axios.put(`http://localhost:8000/api/updatebook/${id}`, {
+      await axios.put(`${BASE_URL}/api/updatebook/${id}`, {
         bookName: String(updateBook.bookName),
         auther: String(updateBook.auther),
         description: String(updateBook.description),
